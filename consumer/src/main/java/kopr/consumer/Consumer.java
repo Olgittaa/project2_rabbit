@@ -41,7 +41,6 @@ public class Consumer {
 
     @RabbitListener(queues = "${recharging.queue}")
     public void consumeRecharging(Recharging recharging) {
-
         User receiver = userRepository.getUserByPhoneNumber(recharging.getReceiver().getPhoneNumber()).get();
         receiver.setCredit(receiver.getCredit().add(recharging.getAmount()));
         userRepository.save(receiver);

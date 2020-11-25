@@ -22,12 +22,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SpringBootApplication
-@Slf4j
 @EnableScheduling
+@Slf4j
 public class ProducerApplication {
     private final UserRepository userRepository;
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
     @Value("${producer.phoneNumber}")
     private String phoneNumber;
 
@@ -54,7 +55,7 @@ public class ProducerApplication {
         return new Jackson2JsonMessageConverter();
     }
 
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 5000)
     public void payMoney() {
         if (!phoneNumber.equals("")) {
             User user = userRepository.getUserByPhoneNumber(phoneNumber).orElseThrow();

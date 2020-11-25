@@ -11,12 +11,12 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
 
-@Data
 @Document(collection = "user")
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Slf4j
+@Data
 public class User {
     @MongoId
     private ObjectId id;

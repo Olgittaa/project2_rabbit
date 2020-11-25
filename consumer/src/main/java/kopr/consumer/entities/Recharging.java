@@ -5,19 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-@Data
-@Slf4j
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Slf4j
+@Data
 public class Recharging {
     private User receiver;
     private BigDecimal amount;
