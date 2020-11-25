@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "producer.phoneNumber",
+      "type": "java.lang.String",
+      "description": "Description for producer.phoneNumber."
+    }
+  ]
+}
